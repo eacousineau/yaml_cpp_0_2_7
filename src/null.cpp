@@ -1,7 +1,7 @@
 #include "yaml-cpp-0.2.7/null.h"
 #include "yaml-cpp-0.2.7/node.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	_Null Null;
 

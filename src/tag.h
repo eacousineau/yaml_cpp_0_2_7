@@ -7,7 +7,7 @@
 
 #include <string>
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	struct Token;
 	struct Directives;

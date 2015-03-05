@@ -12,7 +12,7 @@
 #include "yaml-cpp-0.2.7/contrib/anchordict.h"
 #include "yaml-cpp-0.2.7/contrib/graphbuilder.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
   class GraphBuilderAdapter : public EventHandler
   {

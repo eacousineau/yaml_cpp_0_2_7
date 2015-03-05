@@ -11,7 +11,7 @@
 #include <ios>
 #include <memory>
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	struct Directives;
 	struct Mark;

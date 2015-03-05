@@ -7,7 +7,7 @@
 
 #include "yaml-cpp-0.2.7/dll.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	// this is basically boost::noncopyable
 	class YAML_CPP_API noncopyable

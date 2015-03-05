@@ -19,8 +19,8 @@ namespace {
 #define YAML_ASSERT(cond) do { if(!(cond)) return "  Assert failed: " #cond; } while(false)
 #define PARSE(doc, input) \
 	std::stringstream stream(input);\
-	YAML::Parser parser(stream);\
-	YAML::Node doc;\
+	YAML_0_2_7::Parser parser(stream);\
+	YAML_0_2_7::Node doc;\
 	parser.GetNextDocument(doc)
 #define PARSE_NEXT(doc) parser.GetNextDocument(doc)
 
@@ -30,7 +30,7 @@ namespace Test {
 			TEST ret;
 			try {
 				ret = test();
-			} catch(const YAML::Exception& e) {
+			} catch(const YAML_0_2_7::Exception& e) {
 				ret.ok = false;
 				ret.error = std::string("  Exception caught: ") + e.what();
 			}
@@ -289,7 +289,7 @@ namespace Test {
 			return p.first == q.first && p.second == q.second;
 		}
 		
-		void operator >> (const YAML::Node& node, Pair& p) {
+		void operator >> (const YAML_0_2_7::Node& node, Pair& p) {
 			node[0] >> p.first;
 			node[1] >> p.second;
 		}
@@ -884,11 +884,11 @@ namespace Test {
 			
 			std::stringstream stream(input);
 			try {
-				YAML::Parser parser(stream);
-				YAML::Node doc;
+				YAML_0_2_7::Parser parser(stream);
+				YAML_0_2_7::Node doc;
 				parser.GetNextDocument(doc);
-			} catch(const YAML::ParserException& e) {
-				YAML_ASSERT(e.msg == std::string(YAML::ErrorMsg::INVALID_ESCAPE) + "c");
+			} catch(const YAML_0_2_7::ParserException& e) {
+				YAML_ASSERT(e.msg == std::string(YAML_0_2_7::ErrorMsg::INVALID_ESCAPE) + "c");
 				return true;
 			}
 			
@@ -1099,9 +1099,9 @@ namespace Test {
 			return m._ == n._;
 		}
 		
-		void operator >> (const YAML::Node& node, StringMap& m) {
+		void operator >> (const YAML_0_2_7::Node& node, StringMap& m) {
 			m._.clear();
-			for(YAML::Iterator it=node.begin();it!=node.end();++it) {
+			for(YAML_0_2_7::Iterator it=node.begin();it!=node.end();++it) {
 				std::string key = it.first().to<std::string>();
 				std::string value = it.second().to<std::string>();
 				m._[key] = value;
@@ -1166,8 +1166,8 @@ namespace Test {
 
 			try {
 				PARSE(doc, input);
-			} catch(const YAML::ParserException& e) {
-				if(e.msg == YAML::ErrorMsg::REPEATED_YAML_DIRECTIVE)
+			} catch(const YAML_0_2_7::ParserException& e) {
+				if(e.msg == YAML_0_2_7::ErrorMsg::REPEATED_YAML_DIRECTIVE)
 					return true;
 
 				throw;
@@ -1200,8 +1200,8 @@ namespace Test {
 
 			try {
 				PARSE(doc, input);
-			} catch(const YAML::ParserException& e) {
-				if(e.msg == YAML::ErrorMsg::REPEATED_TAG_DIRECTIVE)
+			} catch(const YAML_0_2_7::ParserException& e) {
+				if(e.msg == YAML_0_2_7::ErrorMsg::REPEATED_TAG_DIRECTIVE)
 					return true;
 				
 				throw;
@@ -1307,7 +1307,7 @@ namespace Test {
 
 			PARSE(doc, input);
 			YAML_ASSERT(doc.size() == 2);
-			for(YAML::Iterator it=doc.begin();it!=doc.end();++it) {
+			for(YAML_0_2_7::Iterator it=doc.begin();it!=doc.end();++it) {
 				if(it.first().to<std::string>() == "foo") {
 					YAML_ASSERT(it.first().Tag() == "tag:yaml.org,2002:str");
 					YAML_ASSERT(it.second().Tag() == "tag:yaml.org,2002:str");
@@ -1330,7 +1330,7 @@ namespace Test {
 			
 			PARSE(doc, input);
 			YAML_ASSERT(doc.size() == 1);
-			for(YAML::Iterator it=doc.begin();it!=doc.end();++it) {
+			for(YAML_0_2_7::Iterator it=doc.begin();it!=doc.end();++it) {
 				YAML_ASSERT(it.first().Tag() == "tag:yaml.org,2002:str");
 				YAML_ASSERT(it.first().to<std::string>() == "foo");
 				YAML_ASSERT(it.second().Tag() == "!bar");
@@ -1382,9 +1382,9 @@ namespace Test {
 			bool threw = false;
 			try {
 				PARSE(doc, input1);
-			} catch(const YAML::ParserException& e) {
+			} catch(const YAML_0_2_7::ParserException& e) {
 				threw = true;
-				if(e.msg != YAML::ErrorMsg::TAG_WITH_NO_SUFFIX)
+				if(e.msg != YAML_0_2_7::ErrorMsg::TAG_WITH_NO_SUFFIX)
 					throw;
 			}
 			
@@ -1460,7 +1460,7 @@ namespace Test {
 
 			PARSE(doc, input);
 			YAML_ASSERT(doc.size() == 2);
-			for(YAML::Iterator it=doc.begin();it!=doc.end();++it) {
+			for(YAML_0_2_7::Iterator it=doc.begin();it!=doc.end();++it) {
 				if(it.first().to<std::string>() == "foo") {
 					YAML_ASSERT(it.second().Tag() == "tag:yaml.org,2002:str");
 					YAML_ASSERT(it.second().to<std::string>() == "");
@@ -1485,7 +1485,7 @@ namespace Test {
 			PARSE(doc, input);
 			YAML_ASSERT(doc.size() == 2);
 			YAML_ASSERT(IsNull(doc["foo"]));
-			YAML_ASSERT(doc[YAML::Null].to<std::string>() == "bar");
+			YAML_ASSERT(doc[YAML_0_2_7::Null].to<std::string>() == "bar");
 			return true;
 		}
 		
@@ -1712,7 +1712,7 @@ namespace Test {
 			YAML_ASSERT(doc.size() == 3);
 			YAML_ASSERT(doc["explicit"].to<std::string>() == "entry");
 			YAML_ASSERT(doc["implicit"].to<std::string>() == "entry");
-			YAML_ASSERT(IsNull(doc[YAML::Null]));
+			YAML_ASSERT(IsNull(doc[YAML_0_2_7::Null]));
 			return true;
 		}
 		
@@ -1732,7 +1732,7 @@ namespace Test {
 			YAML_ASSERT(doc["unquoted"].to<std::string>() == "separate");
 			YAML_ASSERT(IsNull(doc["http://foo.com"]));
 			YAML_ASSERT(IsNull(doc["omitted value"]));
-			YAML_ASSERT(doc[YAML::Null].to<std::string>() == "omitted key");
+			YAML_ASSERT(doc[YAML_0_2_7::Null].to<std::string>() == "omitted key");
 			return true;
 		}
 		
@@ -1800,7 +1800,7 @@ namespace Test {
 			YAML_ASSERT(doc[0][0]["YAML"].to<std::string>() == "separate");
 			YAML_ASSERT(doc[1].size() == 1);
 			YAML_ASSERT(doc[1][0].size() == 1);
-			YAML_ASSERT(doc[1][0][YAML::Null].to<std::string>() == "empty key entry");
+			YAML_ASSERT(doc[1][0][YAML_0_2_7::Null].to<std::string>() == "empty key entry");
 			YAML_ASSERT(doc[2].size() == 1);
 			YAML_ASSERT(doc[2][0].size() == 1);
 			StringMap key;
@@ -1818,8 +1818,8 @@ namespace Test {
 			
 			try {
 				PARSE(doc, input);
-			} catch(const YAML::Exception& e) {
-				if(e.msg == YAML::ErrorMsg::END_OF_SEQ_FLOW)
+			} catch(const YAML_0_2_7::Exception& e) {
+				if(e.msg == YAML_0_2_7::ErrorMsg::END_OF_SEQ_FLOW)
 					return true;
 				
 				throw;
@@ -1932,8 +1932,8 @@ namespace Test {
 				bool threw = false;
 				try {
 					PARSE(doc, input);
-				} catch(const YAML::Exception& e) {
-					if(e.msg != YAML::ErrorMsg::END_OF_SEQ)
+				} catch(const YAML_0_2_7::Exception& e) {
+					if(e.msg != YAML_0_2_7::ErrorMsg::END_OF_SEQ)
 						throw;
 					
 					threw = true;
@@ -1952,8 +1952,8 @@ namespace Test {
 				bool threw = false;
 				try {
 					PARSE(doc, input);
-				} catch(const YAML::Exception& e) {
-					if(e.msg != YAML::ErrorMsg::END_OF_SEQ)
+				} catch(const YAML_0_2_7::Exception& e) {
+					if(e.msg != YAML_0_2_7::ErrorMsg::END_OF_SEQ)
 						throw;
 					
 					threw = true;
@@ -1971,8 +1971,8 @@ namespace Test {
 				bool threw = false;
 				try {
 					PARSE(doc, input);
-				} catch(const YAML::Exception& e) {
-					if(e.msg != YAML::ErrorMsg::END_OF_SEQ)
+				} catch(const YAML_0_2_7::Exception& e) {
+					if(e.msg != YAML_0_2_7::ErrorMsg::END_OF_SEQ)
 						throw;
 					
 					threw = true;
@@ -2176,7 +2176,7 @@ namespace Test {
 			
 			PARSE(doc, input);
 			YAML_ASSERT(doc.size() == 4);
-			YAML_ASSERT(YAML::IsNull(doc[0]));
+			YAML_ASSERT(YAML_0_2_7::IsNull(doc[0]));
 			YAML_ASSERT(doc[1].to<std::string>() == "block node\n");
 			YAML_ASSERT(doc[2].size() == 2);
 			YAML_ASSERT(doc[2][0].to<std::string>() == "one");
@@ -2231,7 +2231,7 @@ namespace Test {
 			PARSE(doc, input);
 			YAML_ASSERT(doc.size() == 3);
 			YAML_ASSERT(doc["plain key"].to<std::string>() == "in-line value");
-			YAML_ASSERT(IsNull(doc[YAML::Null]));
+			YAML_ASSERT(IsNull(doc[YAML_0_2_7::Null]));
 			YAML_ASSERT(doc["quoted key"].size() == 1);
 			YAML_ASSERT(doc["quoted key"][0].to<std::string>() == "entry");
 			return true;

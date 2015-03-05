@@ -2,7 +2,7 @@
 #include "yaml-cpp-0.2.7/exceptions.h"
 #include "iterpriv.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	Iterator::Iterator(): m_pData(new IterPriv)
 	{

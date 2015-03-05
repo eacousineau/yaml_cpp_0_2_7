@@ -6,7 +6,7 @@
 #endif
 
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	// implementation for Node::Read
 	// (the goal is to call ConvertScalar if we can, and fall back to operator >> if not)

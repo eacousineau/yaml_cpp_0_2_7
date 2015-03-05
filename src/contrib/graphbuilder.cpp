@@ -2,7 +2,7 @@
 #include "yaml-cpp-0.2.7/contrib/graphbuilder.h"
 #include "graphbuilderadapter.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
   void *BuildGraphOfNextDocument(Parser& parser, GraphBuilderInterface& graphBuilder)
   {

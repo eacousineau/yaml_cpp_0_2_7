@@ -1,7 +1,7 @@
 #include "yaml-cpp-0.2.7/ostream.h"
 #include <cstring>
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	ostream::ostream(): m_buffer(0), m_pos(0), m_size(0), m_row(0), m_col(0)
 	{

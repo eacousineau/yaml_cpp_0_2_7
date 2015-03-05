@@ -1,6 +1,6 @@
 #include "directives.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	Directives::Directives()
 	{

@@ -9,7 +9,7 @@
 
 #include "../anchor.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
   /// AnchorDict
   /// . An object that stores and retrieves values correlating to anchor_t

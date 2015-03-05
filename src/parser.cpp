@@ -11,7 +11,7 @@
 #include <sstream>
 #include <cstdio>
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	Parser::Parser()
 	{

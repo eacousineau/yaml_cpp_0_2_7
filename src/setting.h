@@ -10,7 +10,7 @@
 #include <vector>
 #include "yaml-cpp-0.2.7/noncopyable.h"
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	class SettingChangeBase;
 	

@@ -15,7 +15,7 @@
 #include <string>
 #include <sstream>
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	class EmitterState;
 	

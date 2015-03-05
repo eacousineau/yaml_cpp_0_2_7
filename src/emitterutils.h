@@ -9,7 +9,7 @@
 #include "yaml-cpp-0.2.7/ostream.h"
 #include <string>
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	namespace Utils
 	{

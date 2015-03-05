@@ -47,7 +47,7 @@ namespace
 	}
 }
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	bool Convert(const std::string& input, bool& b)
 	{

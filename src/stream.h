@@ -15,7 +15,7 @@
 #include <set>
 #include <string>
 
-namespace YAML
+namespace YAML_0_2_7
 {
 	static const size_t MAX_PARSER_PUSHBACK = 8;
 
