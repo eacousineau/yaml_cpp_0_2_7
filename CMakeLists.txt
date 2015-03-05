@@ -279,3 +279,10 @@ if(YAML_CPP_BUILD_TOOLS)
 	add_subdirectory(test)
 	add_subdirectory(util)
 endif()
+
+### Catkin
+find_package(catkin REQUIRED)
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES yaml-cpp-0.2.7
+)
