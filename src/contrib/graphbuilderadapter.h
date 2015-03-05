@@ -8,9 +8,9 @@
 #include <cstdlib>
 #include <map>
 #include <stack>
-#include "yaml-cpp/eventhandler.h"
-#include "yaml-cpp/contrib/anchordict.h"
-#include "yaml-cpp/contrib/graphbuilder.h"
+#include "yaml-cpp-0.2.7/eventhandler.h"
+#include "yaml-cpp-0.2.7/contrib/anchordict.h"
+#include "yaml-cpp-0.2.7/contrib/graphbuilder.h"
 
 namespace YAML
 {

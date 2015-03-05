@@ -1,5 +1,5 @@
 #include "emitterstate.h"
-#include "yaml-cpp/exceptions.h"
+#include "yaml-cpp-0.2.7/exceptions.h"
 
 namespace YAML
 {

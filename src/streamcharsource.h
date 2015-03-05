@@ -6,7 +6,7 @@
 #endif
 
 
-#include "yaml-cpp/noncopyable.h"
+#include "yaml-cpp-0.2.7/noncopyable.h"
 #include <cstddef>
 
 namespace YAML

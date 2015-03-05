@@ -1,6 +1,6 @@
 #include "scanner.h"
 #include "token.h"
-#include "yaml-cpp/exceptions.h"
+#include "yaml-cpp-0.2.7/exceptions.h"
 #include "exp.h"
 #include <cassert>
 #include <memory>
@@ -268,7 +268,7 @@ namespace YAML
 			case IndentMarker::NONE: assert(false); break;
 		}
 		assert(false);
-		throw std::runtime_error("yaml-cpp: internal error, invalid indent type");
+		throw std::runtime_error("yaml-cpp-0.2.7: internal error, invalid indent type");
 	}
 
 	// PushIndentTo

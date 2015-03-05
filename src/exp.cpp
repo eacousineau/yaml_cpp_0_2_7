@@ -1,5 +1,5 @@
 #include "exp.h"
-#include "yaml-cpp/exceptions.h"
+#include "yaml-cpp-0.2.7/exceptions.h"
 #include <sstream>
 
 namespace YAML

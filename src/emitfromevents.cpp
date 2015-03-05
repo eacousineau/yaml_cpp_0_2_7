@@ -1,6 +1,6 @@
-#include "yaml-cpp/emitfromevents.h"
-#include "yaml-cpp/emitter.h"
-#include "yaml-cpp/null.h"
+#include "yaml-cpp-0.2.7/emitfromevents.h"
+#include "yaml-cpp-0.2.7/emitter.h"
+#include "yaml-cpp-0.2.7/null.h"
 #include <cassert>
 #include <sstream>
 

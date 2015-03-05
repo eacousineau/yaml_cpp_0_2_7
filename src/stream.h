@@ -6,8 +6,8 @@
 #endif
 
 
-#include "yaml-cpp/noncopyable.h"
-#include "yaml-cpp/mark.h"
+#include "yaml-cpp-0.2.7/noncopyable.h"
+#include "yaml-cpp-0.2.7/mark.h"
 #include <cstddef>
 #include <deque>
 #include <ios>

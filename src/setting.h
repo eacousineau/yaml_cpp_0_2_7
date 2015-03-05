@@ -8,7 +8,7 @@
 
 #include <memory>
 #include <vector>
-#include "yaml-cpp/noncopyable.h"
+#include "yaml-cpp-0.2.7/noncopyable.h"
 
 namespace YAML
 {

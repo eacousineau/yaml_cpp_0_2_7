@@ -56,12 +56,12 @@ option(MSVC_STHREADED_RT "MSVC: Build with single-threaded static runtime libs (
 ### Sources, headers, directories and libs
 ###
 file(GLOB sources "src/[a-zA-Z]*.cpp")
-file(GLOB public_headers "include/yaml-cpp/[a-zA-Z]*.h")
+file(GLOB public_headers "include/yaml-cpp-0.2.7/[a-zA-Z]*.h")
 file(GLOB private_headers "src/[a-zA-Z]*.h")
  
 if(YAML_CPP_BUILD_CONTRIB)
 	file(GLOB contrib_sources "src/contrib/[a-zA-Z]*.cpp")
-	file(GLOB contrib_public_headers "include/yaml-cpp/contrib/[a-zA-Z]*.h")
+	file(GLOB contrib_public_headers "include/yaml-cpp-0.2.7/contrib/[a-zA-Z]*.h")
 	file(GLOB contrib_private_headers "src/contrib/[a-zA-Z]*.h")
 else()
 	add_definitions(-DYAML_CPP_NO_CONTRIB)
@@ -211,7 +211,7 @@ endif()
 
 set(INCLUDE_INSTALL_ROOT_DIR include)
 
-set(INCLUDE_INSTALL_DIR ${INCLUDE_INSTALL_ROOT_DIR}/yaml-cpp)
+set(INCLUDE_INSTALL_DIR ${INCLUDE_INSTALL_ROOT_DIR}/yaml-cpp-0.2.7)
 set(LIB_INSTALL_DIR "${_library_dir}${LIB_SUFFIX}")
 
 set(_INSTALL_DESTINATIONS
@@ -224,7 +224,7 @@ set(_INSTALL_DESTINATIONS
 ###
 ### Library
 ###
-add_library(yaml-cpp
+add_library(yaml-cpp-0.2.7
 	${sources}
 	${public_headers}
 	${private_headers}
@@ -233,14 +233,14 @@ add_library(yaml-cpp
 	${contrib_private_headers}
 )
 
-set_target_properties(yaml-cpp PROPERTIES
+set_target_properties(yaml-cpp-0.2.7 PROPERTIES
 	VERSION "${YAML_CPP_VERSION}"
 	SOVERSION "${YAML_CPP_VERSION_MAJOR}.${YAML_CPP_VERSION_MINOR}"
-	PROJECT_LABEL "yaml-cpp ${LABEL_SUFFIX}"
+	PROJECT_LABEL "yaml-cpp-0.2.7 ${LABEL_SUFFIX}"
 )
 
 if(IPHONE)
-	set_target_properties(yaml-cpp PROPERTIES
+	set_target_properties(yaml-cpp-0.2.7 PROPERTIES
 		XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "3.0"
 	)
 endif()
@@ -248,7 +248,7 @@ endif()
 if(MSVC)
 	if(NOT BUILD_SHARED_LIBS)
 		# correct library names
-		set_target_properties(yaml-cpp PROPERTIES
+		set_target_properties(yaml-cpp-0.2.7 PROPERTIES
 			DEBUG_POSTFIX "${LIB_TARGET_SUFFIX}d"
 			RELEASE_POSTFIX "${LIB_TARGET_SUFFIX}"
 			MINSIZEREL_POSTFIX "${LIB_TARGET_SUFFIX}"
@@ -257,7 +257,7 @@ if(MSVC)
 	endif()
 endif()
 
-install(TARGETS yaml-cpp ${_INSTALL_DESTINATIONS})
+install(TARGETS yaml-cpp-0.2.7 ${_INSTALL_DESTINATIONS})
 install(
 	FILES
 		${public_headers}
@@ -266,8 +266,8 @@ install(
 )
 
 if(UNIX)
-	set(PC_FILE ${CMAKE_BINARY_DIR}/yaml-cpp.pc)
-	configure_file("yaml-cpp.pc.cmake" ${PC_FILE} @ONLY)
+	set(PC_FILE ${CMAKE_BINARY_DIR}/yaml-cpp-0.2.7.pc)
+	configure_file("yaml-cpp-0.2.7.pc.cmake" ${PC_FILE} @ONLY)
 	install(FILES ${PC_FILE} DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
 endif()
 

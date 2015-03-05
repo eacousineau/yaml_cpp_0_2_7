@@ -46,7 +46,7 @@ namespace YAML
 			default:
 				assert(false);
 		}
-		throw std::runtime_error("yaml-cpp: internal error, bad tag type");
+		throw std::runtime_error("yaml-cpp-0.2.7: internal error, bad tag type");
 	}
 }
 

@@ -8,7 +8,7 @@
 
 #include "ptr_stack.h"
 #include "setting.h"
-#include "yaml-cpp/emittermanip.h"
+#include "yaml-cpp-0.2.7/emittermanip.h"
 #include <cassert>
 #include <vector>
 #include <stack>

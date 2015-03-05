@@ -6,8 +6,8 @@
 #endif
 
 
-#include "yaml-cpp/mark.h"
-#include "yaml-cpp/traits.h"
+#include "yaml-cpp-0.2.7/mark.h"
+#include "yaml-cpp-0.2.7/traits.h"
 #include <stdexcept>
 #include <string>
 #include <sstream>
@@ -102,7 +102,7 @@ namespace YAML
 	private:
 		static const std::string build_what(const Mark& mark, const std::string& msg) {
 			std::stringstream output;
-			output << "yaml-cpp: error at line " << mark.line+1 << ", column " << mark.column+1 << ": " << msg;
+			output << "yaml-cpp-0.2.7: error at line " << mark.line+1 << ", column " << mark.column+1 << ": " << msg;
 			return output.str();
 		}
 	};

@@ -6,8 +6,8 @@
 #endif
 
 
-#include "yaml-cpp/null.h"
-#include "yaml-cpp/traits.h"
+#include "yaml-cpp-0.2.7/null.h"
+#include "yaml-cpp-0.2.7/traits.h"
 #include <limits>
 #include <string>
 #include <sstream>

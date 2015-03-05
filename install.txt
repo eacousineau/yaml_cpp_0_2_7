@@ -1,6 +1,6 @@
 *** With CMake ***
 
-yaml-cpp uses CMake to support cross-platform building. In a UNIX-like system, the basic steps to build are:
+yaml-cpp-0.2.7 uses CMake to support cross-platform building. In a UNIX-like system, the basic steps to build are:
 
 1. Download and install CMake (if you don't have root privileges, just install to a local directory, like ~/bin)
 
@@ -19,6 +19,6 @@ make install
 
 *** Without CMake ***
 
-If you don't want to use CMake, just add all .cpp files to a makefile. yaml-cpp does not need any special build settings, so no 'configure' file is necessary.
+If you don't want to use CMake, just add all .cpp files to a makefile. yaml-cpp-0.2.7 does not need any special build settings, so no 'configure' file is necessary.
 
 (Note: this is pretty tedious. It's sooo much easier to use CMake.)

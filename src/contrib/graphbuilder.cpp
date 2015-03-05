@@ -1,5 +1,5 @@
-#include "yaml-cpp/parser.h"
-#include "yaml-cpp/contrib/graphbuilder.h"
+#include "yaml-cpp-0.2.7/parser.h"
+#include "yaml-cpp-0.2.7/contrib/graphbuilder.h"
 #include "graphbuilderadapter.h"
 
 namespace YAML

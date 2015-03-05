@@ -6,7 +6,7 @@
 #endif
 
 
-#include "yaml-cpp/dll.h"
+#include "yaml-cpp-0.2.7/dll.h"
 
 namespace YAML
 {

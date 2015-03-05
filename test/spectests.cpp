@@ -1,5 +1,5 @@
 #include "spectests.h"
-#include "yaml-cpp/yaml.h"
+#include "yaml-cpp-0.2.7/yaml.h"
 #include <fstream>
 #include <sstream>
 #include <vector>

@@ -6,7 +6,7 @@
 #endif
 
 
-#include "yaml-cpp/ostream.h"
+#include "yaml-cpp-0.2.7/ostream.h"
 #include <string>
 
 namespace YAML

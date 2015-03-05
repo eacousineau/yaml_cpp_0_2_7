@@ -5,7 +5,7 @@
 #pragma once
 #endif
 
-#include "yaml-cpp/eventhandler.h"
+#include "yaml-cpp-0.2.7/eventhandler.h"
 #include <stack>
 
 namespace YAML

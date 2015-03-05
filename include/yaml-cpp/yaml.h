@@ -6,12 +6,12 @@
 #endif
 
 
-#include "yaml-cpp/parser.h"
-#include "yaml-cpp/node.h"
-#include "yaml-cpp/stlnode.h"
-#include "yaml-cpp/iterator.h"
-#include "yaml-cpp/emitter.h"
-#include "yaml-cpp/stlemitter.h"
-#include "yaml-cpp/exceptions.h"
+#include "yaml-cpp-0.2.7/parser.h"
+#include "yaml-cpp-0.2.7/node.h"
+#include "yaml-cpp-0.2.7/stlnode.h"
+#include "yaml-cpp-0.2.7/iterator.h"
+#include "yaml-cpp-0.2.7/emitter.h"
+#include "yaml-cpp-0.2.7/stlemitter.h"
+#include "yaml-cpp-0.2.7/exceptions.h"
 
 #endif // YAML_H_62B23520_7C8E_11DE_8A39_0800200C9A66

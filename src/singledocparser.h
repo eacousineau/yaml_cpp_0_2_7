@@ -6,8 +6,8 @@
 #endif
 
 
-#include "yaml-cpp/anchor.h"
-#include "yaml-cpp/noncopyable.h"
+#include "yaml-cpp-0.2.7/anchor.h"
+#include "yaml-cpp-0.2.7/noncopyable.h"
 #include <string>
 #include <map>
 #include <memory>
